@@ -5,23 +5,23 @@
 https://geoguessmaster.com/
 
 ### About
-Free and lazy geoguess game with no ads. 
-Players compete how close the player can guess random locations in five rounds. 
-You can share the score with other people via social media like Facebook or Twitter. 
-You can play multiplayer game with your friends up to five friends. 
-The first player creates a room and decide the room size. 
-Other players type the same room name as the first player created and the game will start. 
+Free and lazy geoguess game with no ads.
+Players compete how close the player can guess random locations in five rounds.
+You can share the score with other people via social media like Facebook or Twitter.
+You can play multiplayer game with your friends up to five friends.
+The first player creates a room and decide the room size.
+Other players type the same room name as the first player created and the game will start.
 
 ### Build Setup
-You need to configure Google Maps Platform and Firebase to make game work. 
-See the instructions below. 
+You need to configure Google Maps Platform and Firebase to make game work.
+See the instructions below.
 
-- [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key#get-the-api-key)  
-- [Firebase](https://firebase.google.com/docs/database/web/start)  
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key#get-the-api-key)
+- [Firebase](https://firebase.google.com/docs/database/web/start)
 - [Firebase Realtime Database](https://firebase.google.com/docs/database/web/start)
- 
-Once you get an API key and register the project with Firebase, create files named `.env.development.local` and `.env.production.local` inside this project to put environment variables. 
-The files should be like this. 
+
+Once you get an API key and register the project with Firebase, create files named `.env.development.local` and `.env.production.local` inside this project to put environment variables.
+The files should be like this.
 
 `.env.production.local`
 ```
@@ -40,7 +40,7 @@ NODE_ENV=development
 ...
 ```
 
-Now you can run this game.  
+Now you can run this game.
 Download Node.js [here](https://nodejs.org/en/download/) if you don't have and make sure you can run `npm` from the terminal.
 
 ```
@@ -56,20 +56,32 @@ npm run build
 
 You need to host this project as a static website to play multiplayer game with your friends. I recommend using [Netlify](https://www.netlify.com/). You can just fork this project and deploy it from Netlify. Also you can manage environment variables on the Netlify console.
 
+### Docker setup
+
+For easier deployment, it is also possible to build a Docker image. BEWARE the Docker image will include your API key, do not make this publicly available!
+
+Setup:
+
+1. Create the environment files including your APIs as specified in the [Build Setup](###-build-setup) section
+2. Run `$docker-compose build`
+3. Run `$docker-compose up` or alternatively as a daemon `$docker-compose up -d`
+4. The container listens on port 3333. You can then setup a reverse-proxy to serve the page on your webserver or serve directly form the container.
+
+
 ### Features
 - Free game with no ads
 - Multiplayer game
 - PWA and responsive design
 
 ### Contributors
-[Paulo Gomes](http://www.pauloxgomes.com/), UI design  
+[Paulo Gomes](http://www.pauloxgomes.com/), UI design
 
 ### License
 Licensed under [MIT License](https://github.com/spider-hand/Geoguess-Master-Web/blob/master/LICENSE)
 
 ### Contact
-Feel free to give me feedback.  
+Feel free to give me feedback.
 
-creative.spider.hand@gmail.com  
-or  
+creative.spider.hand@gmail.com
+or
 [Discord](https://discord.gg/fPpUzgJ)
