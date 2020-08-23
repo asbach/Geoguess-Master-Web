@@ -1,0 +1,16 @@
+version: '3.8'
+
+
+services:
+  geoguessmaster:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: production-stage
+    ports:
+      - "3333:80"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./.env.development.local:/app/:ro
+      - ./.env.production.local:/app/:ro
